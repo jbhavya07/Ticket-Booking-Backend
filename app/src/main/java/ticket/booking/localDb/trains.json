@@ -1,0 +1,43 @@
+[
+  {
+    "train_id": "super123",
+    "train_no": 19292,
+    "seats": [
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0]
+    ],
+    "station_time": {
+      "Ratangarh": "13:50:00",
+      "Kartarpur": "14:45:00",
+      "JayatriramNagar": "15:33:12"
+    },
+    "station": [
+      "Ratangarh",
+      "Kartarpur",
+      "JayatriramNagar"
+    ]
+  },
+
+  {
+    "train_id": "local23",
+    "train_no": 18209,
+    "seats": [
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0],
+      [0,0,0,0,0,0]
+    ],
+    "station_time": {
+      "SawaiMadhopur": "13:50:00",
+      "Chaksu": "14:45:00",
+      "Aamli": "15:33:12"
+    },
+    "station": [
+      "SawaiMadhopur",
+      "Chaksu",
+      "Aamli"
+    ]
+  }
+]
