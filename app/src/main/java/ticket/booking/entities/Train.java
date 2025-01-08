@@ -48,6 +48,12 @@ public class Train {
     public void setStations(List<String> stations){
         this.stations=stations;
     }
+    public List<List<Integer>> getTrainSeats(){
+        return trainSeats;
+    }
+    public void setTrainSeats(List<List<Integer>> trainSeats){
+        this.trainSeats=trainSeats;
+    }
     public String getTrainInfo(){
         return String.format("Train ID: %s Train No: %s", trainId, trainNo);
 

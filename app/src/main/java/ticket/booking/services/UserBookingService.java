@@ -9,6 +9,7 @@ import ticket.booking.util.UserServiceUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -84,6 +85,34 @@ public class UserBookingService {
     }
 
     public List<Train> getTrains(String source, String destination){
-        return trainService.searchTrains(source, destination);
+        try{
+            TrainBookingService trainBookingService= new TrainBookingService();
+            return trainBookingService.searchTrains(source, destination);
+        }catch(IOException ex){
+            return new ArrayList<>();
+        }
+    }
+    public  List<List<Integer>> fetchSeats(Train train){
+        return train.getTrainSeats();
+    }
+    public boolean bookTrainSeat(Train train, int row, int seat){
+        try{
+            TrainBookingService trainBookingService=new TrainBookingService();
+            List<List<Integer>>seats=train.getTrainSeats();
+            if(row>=0 && row<seats.size() && seat>=0 && seat < seats.get(row).size()){
+                if(seats.get(row).get(seat)==0){
+                    seats.get(row).set(seat, 1);
+                    train.setTrainSeats(seats);
+                    trainBookingService.addTrain(train);
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }catch(IOException ex){
+            return Boolean.FALSE;
+        }
     }
 }

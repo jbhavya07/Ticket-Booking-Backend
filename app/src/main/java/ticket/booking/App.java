@@ -35,6 +35,7 @@ public class App {
             System.out.println("6. Cancel my Booking");
             System.out.println("7. Exit the App");
             option = scanner.nextInt();
+            Train trainSelectedForBooking=new Train();
             switch(option){
                 case 1:
                     System.out.println("Enter the username to signup:");
@@ -77,7 +78,35 @@ public class App {
                             System.out.println("Station "+entry.getKey()+" time: "+entry.getValue());
                         }
                     }
-                    System.out.println();
+                    System.out.println("Select a train by typing 1,2,3..");
+                    trainSelectedForBooking=trains.get(scanner.nextInt());
+                    break;
+
+                case 5:
+                    System.out.println("Select a seat out of these seats:");
+                    List<List<Integer>> seats=userBookingService.fetchSeats(trainSelectedForBooking);
+                    for(List<Integer> row:seats){
+                        for(Integer val:row){
+                            System.out.print(val+" ");
+                        }
+                        System.out.println();
+                    }
+                    System.out.println("Select the seat by typing the row and column");
+                    System.out.println("Enter the row:");
+                    int row= scanner.nextInt();
+                    System.out.println("Enter the column:");
+                    int column= scanner.nextInt();
+                    System.out.println("Booking your seat...");
+                    Boolean booked =userBookingService.bookTrainSeat(trainSelectedForBooking, row, column);
+                    if(booked.equals(Boolean.TRUE)){
+                        System.out.println("Booked!");
+                    }else {
+                        System.out.println("Can't book this seat");
+                    }
+                    break;
+
+                default:
+                    break;
             }
         }
 
