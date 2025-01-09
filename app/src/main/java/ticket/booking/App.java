@@ -22,7 +22,7 @@ public class App {
         try{
             userBookingService=new UserBookingService();
         }catch(IOException ex){
-            System.out.println("There is something wrong");
+            System.out.println("There is something wrong"+ ex.getMessage());
             return;
         }
         while(option !=7){
@@ -103,6 +103,23 @@ public class App {
                     }else {
                         System.out.println("Can't book this seat");
                     }
+                    break;
+
+                case 6:
+                    System.out.println("Canceling the booking");
+                    System.out.println("Enter the ticketID to cancel:");
+                    String ticketIdToCancel=scanner.next();
+                    Boolean isCanceled=userBookingService.cancelBooking(ticketIdToCancel);
+                    if(isCanceled.equals(Boolean.TRUE)){
+                        System.out.println("Your Booking is canceled");
+                    }else{
+                        System.out.println("Failed to cancel your booking");
+                    }
+                    break;
+
+                case 7:
+                    System.out.println("Exiting the train booking app");
+                    option=7;
                     break;
 
                 default:
