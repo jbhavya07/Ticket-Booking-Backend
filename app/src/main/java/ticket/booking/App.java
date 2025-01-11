@@ -119,7 +119,6 @@ public class App {
 
                 case 7:
                     System.out.println("Exiting the train booking app");
-                    option=7;
                     break;
 
                 default:
