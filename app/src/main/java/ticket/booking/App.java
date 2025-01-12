@@ -25,6 +25,8 @@ public class App {
             System.out.println("There is something wrong"+ ex.getMessage());
             return;
         }
+
+        //these will give the options
         while(option !=7){
             System.out.println("Choose Option:");
             System.out.println("1. SignUp");
