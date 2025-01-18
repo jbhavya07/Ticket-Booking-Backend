@@ -36,6 +36,11 @@ public class App {
 //        sksdbhudaik
         //jjjiikkjj
         //kkmmnnbb
+        //u
+        //rox
+        //kaj
+        //vv
+        //ll
         while(option !=7){
             System.out.println("Choose Option:");
             System.out.println("1. SignUp");
