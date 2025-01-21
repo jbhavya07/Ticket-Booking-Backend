@@ -41,6 +41,7 @@ public class App {
         //kaj
         //vv
         //ll
+        //smooth operator
 
         //lako
         //ajks
